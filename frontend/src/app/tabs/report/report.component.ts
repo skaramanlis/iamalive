@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { IamaliveService, IReport } from 'src/app/services/services/iamalive.service';
 
 
@@ -10,10 +11,9 @@ import { IamaliveService, IReport } from 'src/app/services/services/iamalive.ser
 })
 export class ReportComponent implements OnInit {
 	reportForm: FormGroup
-  
-
+  subManager = new Subscription();
   constructor(
-    // private iamaliveService: IamaliveService,
+    private iamaliveService: IamaliveService,
     private fb: FormBuilder
   ) { }
 
@@ -21,7 +21,12 @@ export class ReportComponent implements OnInit {
   
     const data = await this.reportForm.getRawValue();
     console.log("report1",data)
-    // await this.iamaliveService.report(data)
+    this.subManager.add(
+      this.iamaliveService.report(data)
+      .subscribe(() => {
+        this.reportForm.patchValue({country:"hello"})
+      })
+    );
   }
 
   ngOnInit() {
@@ -29,11 +34,15 @@ export class ReportComponent implements OnInit {
       mobile: [undefined, [
         Validators.required, Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}')
       ]],
-      country: [undefined, []],
+      country: ['', [Validators.required]],
       comment : [undefined, []],
       seen : [undefined, []],
       location : [undefined, []]
     })
+  }
+
+  ngOnDestroy() {
+    this.subManager.unsubscribe();
   }
 
 }

@@ -1,21 +1,9 @@
-<form [formGroup]="reportForm">
-
-  <label for="first-name">First Name: </label>
-  <input id="first-name" type="text" formControlName="country">
-  <div class="btn btn-primary" (click)="report()">ssss</div>
-</form>
-
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="margin: 50px">
-  <!-- <form [formGroup]="reportForm">  
-    <input id="first-name" type="text" class="form-control" name="country" formControlName="country"/>
-     
-    <div class="btn btn-primary" (click)="report()">ssss</div> -->
-
-    
-<!--
+  <form [formGroup]="reportForm">    
     <div class="wrapper">
       <ion-content fullscreen>
+        {{reportForm.value | json}}
         <ion-list lines="full" class="ion-no-margin">
           <ion-item-group>
             <ion-item>
@@ -41,7 +29,7 @@
 
             
             <div class="btn btn-primary" (click)="report()">ssss</div>
-            <ionic-button color="primary" (click)="report()">Report</ionic-button>
+            <!-- <ionic-button color="primary" (click)="report()">Report</ionic-button> -->
         </ion-item-group>
         </ion-list>
 
@@ -49,5 +37,4 @@
     </div>
 
   </form>
-       -->
 </div>

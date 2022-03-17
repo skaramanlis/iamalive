@@ -1,5 +1,8 @@
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 import { ContactComponent } from './contact/contact.component';
 import { ReportComponent } from './report/report.component';
 import { SearchComponent } from './search/search.component';
@@ -31,6 +34,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  declarations: [SearchComponent, ReportComponent, ContactComponent],
+  exports: [SearchComponent, ReportComponent, ContactComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TabsPageRoutingModule {}
