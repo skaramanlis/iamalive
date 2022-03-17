@@ -7,34 +7,29 @@
         <ion-list lines="full" class="ion-no-margin">
           <ion-item-group>
             <ion-item>
-              <ion-label position="stacked">Country</ion-label>
-              <ion-input autocomplete="tel-country-code" inputmode="tel-country-code" type="tel-country-code"  placeholder="Country" formControlName="country"></ion-input>
+              <ion-label position="stacked">Country code</ion-label>
+              <ion-input autocomplete="tel-country-code" inputmode="tel-country-code" type="tel-country-code"  placeholder="Country code" formControlName="country"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="stacked">Mobile number</ion-label>
+              <ion-label position="stacked">Mobile number of person seen alive</ion-label>
                <ion-input autocomplete="tel" inputmode="tel" type="tel"  placeholder="Mobile number" formControlName="mobile"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="stacked">Mobile number</ion-label>
-              <ion-input autocomplete="tel" inputmode="tel" type="tel"  placeholder="Mobile number" formControlName="comment"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">Mobile number</ion-label>
+              <ion-label position="stacked">Seen alive date</ion-label>
              <ion-input autocomplete="tel" inputmode="tel" type="tel"  placeholder="Mobile number" formControlName="seen" ></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="stacked">location</ion-label>
+              <ion-label position="stacked">Seen alive loocation</ion-label>
              <ion-input autocomplete="tel" inputmode="tel" type="tel"  placeholder="Mobile number" formControlName="location" ></ion-input>
+            </ion-item> 
+            <ion-item>
+              <ion-label position="stacked">Comment</ion-label>
+              <ion-input autocomplete="tel" inputmode="tel" type="tel"  placeholder="Mobile number" formControlName="comment"></ion-input>
             </ion-item>
-
-            
-            <div class="btn btn-primary" (click)="report()">ssss</div>
-            <!-- <ionic-button color="primary" (click)="report()">Report</ionic-button> -->
+            <div class="btn btn-primary" (click)="report()">Report person</div>
         </ion-item-group>
         </ion-list>
-
       </ion-content>
     </div>
-
   </form>
 </div>
