@@ -32,7 +32,7 @@ export class ReportComponent implements OnInit {
   ngOnInit() {
     this.reportForm = this.fb.group({
       mobile: [undefined, [
-        Validators.required, Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}')
+        Validators.required
       ]],
       country: ['', [Validators.required]],
       comment : [undefined, []],

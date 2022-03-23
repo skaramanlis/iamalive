@@ -127,7 +127,7 @@ let ReportComponent = class ReportComponent {
     ngOnInit() {
         this.reportForm = this.fb.group({
             mobile: [undefined, [
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}')
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required
                 ]],
             country: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
             comment: [undefined, []],
