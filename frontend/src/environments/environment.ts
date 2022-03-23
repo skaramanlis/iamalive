@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API: 'http://localhost/iamlive/iamalive/backend/index.php?'
+  API: 'http://sims.gr/backend/index.php?'
 };
 
 /*
